@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React from "react"
 
-function Form() {
-  const [firstName, setFirstName] = useState("John");
-  const [lastName, setLastName] = useState("Henry");
 
-  function handleFirstNameChange(e) {
-    setFirstName(e.target.value);
-  }
-  
-  function handleLastNameChange(e) {
-    setLastName(e.target.value);
-  } 
-
+function Form(props) {
   return (
     <form>
-      <input type="text" onChange={handleFirstNameChange} value={firstName} />
-      <input type="text" onChange={handleLastNameChange} value={lastName} />
+      <input 
+        type="text" 
+        onChange={props.handleFirstNameChange} 
+        value={props.firstName} 
+      />
+      <input 
+        type="text" 
+        onChange={props.handleLastNameChange} 
+        value={props.lastName} 
+      />
+
       <button type="submit">Submit</button>
     </form>
-  );
+  )
 }
 
 export default Form;
